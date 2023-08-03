@@ -15,6 +15,15 @@ return new class extends Migration
     {
         Schema::create('portfolios', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('image');
+            $table->text('link')->nullable();
+            $table->text('description');
+            $table->string('back_ender');
+            $table->string('front_ender')->nullable();
+            $table->string('ux')->nullable();
+            $table->string('ui')->nullable();
+            $table->string('illustrator')->nullable();
             $table->timestamps();
         });
     }

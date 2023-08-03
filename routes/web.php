@@ -3,7 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\DashboardController as DashboardCrontroller;
+use App\Http\Controllers\Admin\DashboardController as DashboardCrontroller;
+use App\Http\Controllers\Admin\PortfolioController as PortfolioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Route::get('/', function () {
 // })->middleware(['auth', 'verified'])->name('dashboard');
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function(){
     Route::get('/',[DashboardController::class,'index'])->name('dashboard');
+    Route::resource('works', PortfolioController::class);
 
 });
 

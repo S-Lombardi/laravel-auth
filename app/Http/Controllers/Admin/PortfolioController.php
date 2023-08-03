@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
 
 use App\Models\Portfolio;
 use App\Http\Requests\StorePortfolioRequest;
@@ -15,7 +17,8 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        //
+        $works = Portfolio::all();
+        return view('admin.works.index', compact('works'));
     }
 
     /**

@@ -2,8 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
-use App\Http\Controllers\Admin\DashboardController as DashboardCrontroller;
+use App\Http\Controllers\Admin\DashboardController as DashboardController;
 use App\Http\Controllers\Admin\PortfolioController as PortfolioController;
 
 /*
@@ -21,17 +20,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-//Dopo aver creato il controlle, gestisco la rrotta con il controller stesso
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
+
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function(){
     Route::get('/',[DashboardController::class,'index'])->name('dashboard');
-    Route::resource('works', PortfolioController::class);
+    Route::resource('works',PortfolioController::class);
 
 });
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

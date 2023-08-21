@@ -8,7 +8,7 @@
                 
                 {{-- IMMAGINE --}}
                 <div class="card-img-top">
-                    <img class="img-fluid" src="{{$work->image}}" alt="{{$work->title}}">
+                    <img class="img-fluid" src="{{$project->image}}" alt="{{$project->title}}">
                 </div>
 
             </div>
@@ -16,22 +16,22 @@
             {{-- COL RIGHT - DESCRIZIONE--}}
             <div class="col-6">
                 {{-- TITOLO --}}
-                <h5 class="card-title text-uppercase mb-2">{{$work->title}}</h5>
+                <h5 class="card-title text-uppercase mb-2">{{$project->title}}</h5>
 
                 {{-- DESCRIZIONE --}}
-                <p class="card-text">{{$work->description}}</p>
+                <p class="card-text">{{$project->description}}</p>
 
                 {{-- LINK --}}
                 <div class="mb-3">   
                     Link: 
-                    <em><a href="#">{{$work->link}}</a></em>
+                    <em><a href="#">{{$project->link}}</a></em>
                 </div>
 
                 {{--FIGURE PROFESSIONALI del progetto--}}
 
-                <div>Back-ender: {{$work->back_ender}}</div>
+                <div>Back-ender: {{$project->back_ender}}</div>
 
-                <div>Front-ender: {{$work->front_ender}}</div>
+                <div>Front-ender: {{$project->front_ender}}</div>
 
             </div>
 

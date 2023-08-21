@@ -4,13 +4,31 @@
     <div>
         <div class="container">
             <div class="row">
-                {{-- Mostro a video i dati creati con Faker --}}
+                {{-- Mostro a video i dati dei lavori del portfolio creati con Faker --}}
                 @foreach($works as $project)
-                    <div class="col-12 card">
-                        {{$project->title}}
-
-                        
-                    </div>
+                    <a href="">
+                        <div class="col-12 col-md-6 col-lg-4 d-flex flex-wrap">
+    
+                            <div class="card mt-5">
+                                {{-- IMMAGINE --}}
+                                <div class="card-img-top">
+                                    <img class="img-fluid" src="{{$project->image}}" alt="{{$project->title}}">
+                                </div>
+    
+                                <div class="card-body ">
+                                    {{-- TITOLO --}}
+                                    <h5 class="card-title text-uppercase">{{$project->title}}</h5>
+    
+                                    {{-- DESCRIZIONE PROGETTO --}}
+                                    <p class="card-text">{{$project->description}}</p>
+    
+                                    {{-- LINK PROGETTO --}}
+                                    <em><a href="#">{{$project->link}}</a></em>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </a>
                 @endforeach
             </div>
         </div>

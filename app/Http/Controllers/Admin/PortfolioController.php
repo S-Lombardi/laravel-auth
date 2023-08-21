@@ -79,9 +79,13 @@ class PortfolioController extends Controller
      * @param  \App\Models\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePortfolioRequest $request, Portfolio $portfolio)
+    public function update(UpdatePortfolioRequest $request, $id)
     {
-        //
+        $form_data = $request->all();
+        $project = Portfolio::findOrFail($id);
+
+        $project->update($form_data);
+        return redirect()->route('admin.works.show', ['project' => $project->id]);
     }
 
     /**
@@ -90,8 +94,11 @@ class PortfolioController extends Controller
      * @param  \App\Models\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Portfolio $portfolio)
+    public function destroy($id)
     {
-        //
+        $project = Portfolio::findOrFail($id);
+
+        $project->delete();
+        return redirect()->route('admin.works.index');
     }
 }

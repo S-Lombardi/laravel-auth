@@ -39,7 +39,13 @@ class PortfolioController extends Controller
      */
     public function store(StorePortfolioRequest $request)
     {
-        //
+        $form_data=$request-> all();
+
+        $project= new Portfolio();
+        $project->fill($form_data);
+
+        $project->save();
+        return redirect()->route('admin.works.index');
     }
 
     /**
@@ -50,8 +56,8 @@ class PortfolioController extends Controller
      */
     public function show($id)
     {   
-        $work = Portfolio::findOrFail($id);
-        return view('admin.works.show', compact('work'));
+        $project = Portfolio::findOrFail($id);
+        return view('admin.works.show', compact('project'));
     }
 
     /**

@@ -33,6 +33,14 @@
 
                 <div>Front-ender: {{$project->front_ender}}</div>
 
+                <div>UX: {{$project->ux}}</div>
+
+                <div>UI: {{$project->ui}}</div>
+
+                <div>Illustratore: {{$project->illustrator}}</div>
+
+
+
             </div>
 
         </div>

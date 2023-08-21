@@ -6,7 +6,7 @@
             <div class="row">
                 {{-- Mostro a video i dati dei lavori del portfolio creati con Faker --}}
                 @foreach($works as $project)
-                    <a href="">
+                    <a href="{{route('admin.works.show', $project->id)}}">
                         <div class="col-12 col-md-6 col-lg-4 d-flex flex-wrap">
     
                             <div class="card mt-5">

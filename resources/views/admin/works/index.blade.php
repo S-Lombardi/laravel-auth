@@ -35,10 +35,19 @@
                                 <em><a href="#">{{$project->link}}</a></em>
                             </div>
                             
-                            {{-- FILE SHOW --}}
-                            <a href="{{route('admin.works.show', $project->id)}}">
-                                Dettagli-->
-                            </a>
+                            {{-- FILE SHOW - Mostra dettagli del progetto --}}
+                            <div>
+                                <a href="{{route('admin.works.show', $project->id)}}">
+                                    Dettagli-->
+                                </a>
+                            </div>
+
+                            {{-- FILE EDIT - Modifica form --}}
+                            <button class="btn btn-sm btn-primary mt-3">
+                                <a class="text-light text-decoration-none" href="{{route('admin.works.edit', $project->id)}}">
+                                    Modifica
+                                </a>
+                            </button>
                         </div>
                     </div>
                 </div>

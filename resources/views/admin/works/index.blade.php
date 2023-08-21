@@ -48,6 +48,17 @@
                                     Modifica
                                 </a>
                             </button>
+
+                            {{-- FORM DELETE - Elimina progetto --}}
+                            <form action="{{route('admin.works.destroy', $project->id)}}" onsubmit="return confirm('Sei sicuro di voler eliminare questo progetto?')" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="mt-3 btn btn-danger btn-sm">
+                                    Elimina
+                                </button>
+                            </form>
+
+
                         </div>
                     </div>
                 </div>

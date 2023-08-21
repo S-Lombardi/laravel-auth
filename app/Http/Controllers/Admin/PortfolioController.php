@@ -66,9 +66,10 @@ class PortfolioController extends Controller
      * @param  \App\Models\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function edit(Portfolio $portfolio)
+    public function edit($id)
     {
-        //
+        $project = Portfolio::findOrFail($id);
+        return view('admin.works.edit', compact ('project'));
     }
 
     /**

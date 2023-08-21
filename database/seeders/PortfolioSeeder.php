@@ -39,8 +39,7 @@ class PortfolioSeeder extends Seeder
             $work->illustrator = $faker->name();
 
             $work->save();
-            
-
+    
         }
     }
 }

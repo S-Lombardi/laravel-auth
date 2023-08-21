@@ -28,7 +28,7 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.works.create');
     }
 
     /**
@@ -50,7 +50,6 @@ class PortfolioController extends Controller
      */
     public function show($id)
     {   
-    
         $work = Portfolio::findOrFail($id);
         return view('admin.works.show', compact('work'));
     }

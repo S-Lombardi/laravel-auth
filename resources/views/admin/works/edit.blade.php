@@ -7,7 +7,7 @@
             <div class="col-12">
     
                 {{-- INIZIO FORM --}}
-                <form action="{{route('admin.works.update', $project->id)}}" method="POST">
+                <form action="{{route('admin.works.update', $project->id)}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     {{-- TITOLO --}}
@@ -19,7 +19,7 @@
                     {{-- IMG --}}
                     <div class="form-group">
                         <label for="" class="control-label">Immagine</label>
-                        <input type="text"class="form-control" id="image" name="image" value="{{$project->image}}">
+                        <input type="file" class="form-control" id="image" name="image" value="{{$project->image}}">
                     </div>
     
                     {{-- LINK --}}

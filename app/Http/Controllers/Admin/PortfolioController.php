@@ -102,7 +102,7 @@ class PortfolioController extends Controller
         }
 
         $project->update($form_data);
-        return redirect()->route('admin.works.show', ['project' => $project->id]);
+        return redirect()->route('admin.works.show', $project->id);
     }
 
     /**

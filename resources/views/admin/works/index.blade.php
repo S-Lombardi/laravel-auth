@@ -17,9 +17,9 @@
                 <div class="col-12 col-md-6 col-lg-4 d-flex flex-wrap">
 
                     <div class="card mt-5">
-                        {{-- IMMAGINE --}}
+                        {{--ASSET IMMAGINE per comando Sfoglia immagine  --}}
                         <div class="card-img-top">
-                            <img class="img-fluid" src="{{$project->image}}" alt="{{$project->title}}">
+                            <img class="img-fluid" src="{{asset('storage/'.$project->image)}}" alt="{{$project->title}}">
                         </div>
 
                         <div class="card-body ">

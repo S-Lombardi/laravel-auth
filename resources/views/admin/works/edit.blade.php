@@ -18,6 +18,11 @@
     
                     {{-- IMG --}}
                     <div class="form-group">
+                        {{-- ASSET per visualizzare immagine selezionata dall'imput  --}}
+                        <div>
+                            <img src="{{asset('storage/'.$project->image)}}" alt="">
+                        </div>
+                        {{-- INPUT --}}
                         <label for="" class="control-label">Immagine</label>
                         <input type="file" class="form-control" id="image" name="image" value="{{$project->image}}">
                     </div>

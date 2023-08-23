@@ -8,7 +8,7 @@ use App\Models\Portfolio;
 use App\Http\Requests\StorePortfolioRequest;
 use App\Http\Requests\UpdatePortfolioRequest;
 
-use Illuminate\Support\Faceade;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class PortfolioController extends Controller
@@ -50,6 +50,8 @@ class PortfolioController extends Controller
         //Controllo per le immagini
         if($request->hasFile('image')){
             $path = Storage::put('image', $request->image);
+
+            $form_data['image']=$path;
         }
 
         $project->save();
@@ -95,6 +97,8 @@ class PortfolioController extends Controller
         //Controllo per le immagini
         if($request->hasFile('image')){
             $path = Storage::put('image', $request->image);
+
+            $form_data['image']=$path;
         }
 
         $project->update($form_data);

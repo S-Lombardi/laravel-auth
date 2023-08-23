@@ -8,6 +8,9 @@ use App\Models\Portfolio;
 use App\Http\Requests\StorePortfolioRequest;
 use App\Http\Requests\UpdatePortfolioRequest;
 
+use Illuminate\Support\Faceade;
+use Illuminate\Http\Request;
+
 class PortfolioController extends Controller
 {
     /**
@@ -43,6 +46,11 @@ class PortfolioController extends Controller
 
         $project= new Portfolio();
         $project->fill($form_data);
+        
+        //Controllo per le immagini
+        if($request->hasFile('image')){
+            $path = Storage::put('image', $request->image);
+        }
 
         $project->save();
         return redirect()->route('admin.works.index');
@@ -83,6 +91,11 @@ class PortfolioController extends Controller
     {
         $form_data = $request->all();
         $project = Portfolio::findOrFail($id);
+
+        //Controllo per le immagini
+        if($request->hasFile('image')){
+            $path = Storage::put('image', $request->image);
+        }
 
         $project->update($form_data);
         return redirect()->route('admin.works.show', ['project' => $project->id]);

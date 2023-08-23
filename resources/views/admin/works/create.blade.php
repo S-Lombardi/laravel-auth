@@ -19,7 +19,7 @@
     
     
                 {{-- INIZIO FORM --}}
-                <form action="{{route('admin.works.store')}}" method="POST">
+                <form action="{{route('admin.works.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     {{-- TITOLO --}}
                     <div class="form-group">
@@ -30,7 +30,7 @@
                     {{-- IMG --}}
                     <div class="form-group">
                         <label for="" class="control-label">Immagine</label>
-                        <input type="text"class="form-control" id="image" name="image" placeholder="Immagine progetto">
+                        <input type="file" class="form-control" id="image" name="image" placeholder="Immagine progetto">
                     </div>
     
                     {{-- LINK --}}
